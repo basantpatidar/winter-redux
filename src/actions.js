@@ -1,19 +1,31 @@
-import axios from "axios";
-const CURRENT_WEATHER = 'CURRENT_WEATHER';
+// import axios from "axios";
+const CITY = 'CITY';
 const SET_WEATHER = "SET_WEATHER";
+const ZIP_CODE = 'ZIP_CODE'
 
-export const currentWeather = city => async dispatch => {
-  // const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0dce981b281f3cfbd3f3ef95aab5a6c2`);
-  // console.log(res); 
-  
+export const city = (city) => async dispatch => {
+   
   dispatch ({
-    type: CURRENT_WEATHER,
+    type: CITY,
     payload: city
   });
 
-  const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
+  
+}
+
+export const zip = (zip) => async dispatch => {
   dispatch({
-    type: SET_WEATHER,
-    payload: res.data
+    type: ZIP_CODE,
+    payload: zip
   })
 }
+
+export const SearchResult = (res) => dispatch => {
+  // const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
+  dispatch({
+    type: SET_WEATHER,
+    payload: res
+  });
+}
+
+

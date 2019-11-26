@@ -1,22 +1,30 @@
 import {combineReducers} from 'redux';
 
 const initialState = {
-  search: ''
+  search: '',
+  apiResponse: null
 }
 
+
 const searchReducer = (state = initialState, action) => {
- if( action.type === "CURRENT_WEATHER" ){
+ if( action.type === "CITY" ){
    
-     console.log(state ,"CURRENT_WEATHER  action");
+     console.log(state ," -< - <---  City  action");
    return {
-     ...state, search : action.payload
+     ...state, city : action.payload
    }
  }
- if(action.type === "SET_WEATHER"){
+ if(action.type === "ZIP_CODE"){
+   console.log("ZipCode");
    return {
-     ...state, apiResponse : action.payload
+     ...state, zipCode: action.payload
    }
  }
+//  if(action.type === "SET_WEATHER"){
+//    return {
+//      ...state, apiResponse : action.payload
+//    }
+//  } 
  return state;
 }
 export default combineReducers({
