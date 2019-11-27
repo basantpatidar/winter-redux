@@ -1,21 +1,33 @@
-import axios from 'axios';
-const CURRENT_WEATHER = 'CURRENT_WEATHER';
-const SET_WEATHER = 'SET_WEATHER';
+// import axios from "axios";
+const CITY = 'CITY';
+const SET_WEATHER = "SET_WEATHER";
+const ZIP_CODE = 'ZIP_CODE'
 
-export const currentWeather = city => async dispatch => {
-  const res = await axios.get(
-    `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
-  );
-  console.log(res);
-
-  dispatch({
-    type: CURRENT_WEATHER,
-    payload: city
+export const city = (name, value) => async dispatch => {
+   
+  dispatch ({
+    type: CITY,
+    payload: {[name]: value}
   });
 
-  // const res = await axios.get(`api.openweathermap.org/data/2.5/weather?q=${city}&appid=31e12e179d9d9f7a0e0ba5d7c45a32a6`);
-  // dispatch({
-  //   type: "SET_WEATHER",
-  //   payload: res
-  // })
-};
+  
+}
+
+export const zip = (zip) => async dispatch => {
+  dispatch({
+    type: ZIP_CODE,
+    payload: zip
+  })
+}
+
+export const SearchResult = (res) => dispatch => {
+  // const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
+  dispatch({
+    type: SET_WEATHER,
+    payload: res
+  });
+}
+
+
+//How do reducers know that specifically only that reduce is got called?
+//I mean that there are several reducers so do every action gets checked in each reducer?
