@@ -1,13 +1,14 @@
-import axios from "axios";
-import { async } from "q";
+import axios from 'axios';
 const CURRENT_WEATHER = 'CURRENT_WEATHER';
-const SET_WEATHER = "SET_WEATHER";
+const SET_WEATHER = 'SET_WEATHER';
 
 export const currentWeather = city => async dispatch => {
-  const res = await axios.get(`api.openweathermap.org/data/2.5/weather?q=${city}&appid=31jfdjgdghdfhbjjfhgfga32a`);
+  const res = await axios.get(
+    `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+  );
   console.log(res);
-  
-  dispatch ({
+
+  dispatch({
     type: CURRENT_WEATHER,
     payload: city
   });
@@ -17,4 +18,4 @@ export const currentWeather = city => async dispatch => {
   //   type: "SET_WEATHER",
   //   payload: res
   // })
-}
+};
