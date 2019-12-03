@@ -3,13 +3,9 @@ import { combineReducers } from 'redux';
 const initialState = {
   search: '',
   apiResponse: null
-<<<<<<< HEAD
 };
 
-
-
 const searchReducer = (state = initialState, action) => {
-
   if (action.type === 'CITY') {
     console.log(state, ' -< - <---  City  action');
     return {
