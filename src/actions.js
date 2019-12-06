@@ -19,6 +19,12 @@ export const zip = (zip) => async dispatch => {
     payload: zip
   })
 }
+export const hour = (hour) => async dispatch => {
+  dispatch({
+    type: HOURLY,
+    payload: hour
+  })
+}
 
 export const SearchResult = (res) => dispatch => {
   // const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
