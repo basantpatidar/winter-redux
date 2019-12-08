@@ -16,9 +16,10 @@ export const zip = zip => async dispatch => {
     payload: zip
   });
 };
+//for hourly weather
 export const hour = hour => async dispatch => {
   dispatch({
-    type: HOURLY,
+    type: 'HOURLY',
     payload: hour
   });
 };
