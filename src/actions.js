@@ -34,3 +34,21 @@ export const SearchResult = res => dispatch => {
 
 //How do reducers know that specifically only that reduce is got called?
 //I mean that there are several reducers so do every action gets checked in each reducer?
+
+// const objO = {a : 1};
+// const objT = {b:2};
+// const objTh = {c:3};
+// const objF = {d:4};
+// const objFi = {e:5};
+// const objS = {...objO, ...objT, ...objTh, objF, objFi};
+// console.log(objS);
+
+// const newObj = {};
+// const obj = () => {
+//   const objects = [{a:1}, {b:2}, {c:3}, {d:4}, {e:5}];
+//   objects.map( (o) => {
+//     return  {...o, ...};
+//   })
+//   return newObj;
+// }
+// obj();
