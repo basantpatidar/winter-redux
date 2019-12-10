@@ -18,11 +18,12 @@ const searchReducer = (state = initialState, action) => {
       ...action.payload
     };
   }
-  //  if(action.type === "SET_WEATHER"){
-  //    return {
-  //      ...state, apiResponse : action.payload
-  //    }
-  //  }
+  if (action.type === 'SET_WEATHER') {
+    return {
+      ...state,
+      apiResponse: action.payload
+    };
+  }
   return state;
 };
 export default combineReducers({
