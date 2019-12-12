@@ -25,7 +25,7 @@ export const hour = hour => async dispatch => {
 };
 
 export const SearchResult = res => dispatch => {
-  // const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
+  const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
   dispatch({
     type: SET_WEATHER,
     payload: res
