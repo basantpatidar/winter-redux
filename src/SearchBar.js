@@ -7,11 +7,11 @@ import axios from 'axios';
 class SearchBar extends React.Component {
   handleChangeCity = event => {
     this.props.city(event.target.value);
-    console.log(this.props.apiResponse, 'This is handleChange City ');
+  //  console.log(this.props.apiResponse, 'This is handleChange City ');
   };
   handleChangeZip = event => {
     this.props.zip(event.target.value);
-    console.log(this.props.apiResponse, 'This is handleChange Zip');
+   // console.log(this.props.apiResponse, 'This is handleChange Zip');
   };
   callApiHere = () => {
     axios
