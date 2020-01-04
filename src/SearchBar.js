@@ -19,7 +19,6 @@ class SearchBar extends React.Component {
         `https://api.openweathermap.org/data/2.5/weather?q=${this.props.searchInput.city}&appid=`
       )
       .then(res => this.props.SearchResult(res.data));
-    const res = '';
   };
 
   render() {
