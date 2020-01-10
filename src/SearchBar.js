@@ -13,6 +13,11 @@ class SearchBar extends React.Component {
     this.props.zip(event.target.value);
     //console.log(this.props.apiResponse, 'This is handleChange Zip');
   };
+
+  handleChangeCounty = event => {
+    this.props.county(event.target.value);
+    //console.log(this.props.apiResponse, 'This is handleChange Zip');
+  };
   callApiHere = () => {
     axios
       .get(
