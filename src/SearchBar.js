@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
 
   handleChangeCounty = event => {
     this.props.county(event.target.value);
-    //console.log(this.props.apiResponse, 'This is handleChange Zip');
+    console.log(this.props.apiResponse, 'This is handleChange county');
   };
   callApiHere = () => {
     axios
