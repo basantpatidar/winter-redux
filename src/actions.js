@@ -24,6 +24,7 @@ export const hour = hour => async dispatch => {
   });
 };
 
+//need check
  export const SearchResult = res => dispatch => {
    const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
    dispatch({
