@@ -14,13 +14,13 @@ class SearchBar extends React.Component {
     console.log(this.props.apiResponse, 'This is handleChange Zip');
   };
 
-  callApiHere = () => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${this.props.searchInput.city}&appid=`
-      )
-      .then(res => this.props.SearchResult(res.data));
-  };
+//   callApiHere = () => {
+//     axios
+//       .get(
+//         `https://api.openweathermap.org/data/2.5/weather?q=${this.props.searchInput.city}&appid=`
+//       )
+//       .then(res => this.props.SearchResult(res.data));
+//   };
 
   render() {
     return (
